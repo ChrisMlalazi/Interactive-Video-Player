@@ -7,35 +7,33 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  color: black;
-  background-color: grey;
   max-width: 960px;
   margin: 0 auto;
+  background-color: green;
 }
 
-.wrapper,.text {
-  background-color: grey;
-  
+/*************
+Video Controls
+**************/
+
+#video_player_box{
+ width:550px; 
+ background:#000; 
+ margin:0px auto;
 }
-
-.text, video, .wrapper{
-  width: 90%;  
-  margin: 0 auto;
-
-}
-
-.text, video { 
-  border: 1px solid white;  
-}
-
-.text {
-  padding: 10px;
+#video_controls_bar{ 
+  background: #333; 
+  padding:10px;
 }
 
 
-video{  
-  display: block; 
-}
+
+
+
+
+
+
+
 
 
 
