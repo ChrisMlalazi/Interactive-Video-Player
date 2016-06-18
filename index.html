@@ -11,13 +11,14 @@
   <body>
      
     <div id="video_player_box">
-          <video id="my_video" width="550" height="300" autoplay>
+          <video id="my_video" width="550" height="300">
              <source src="video/video.mp4" type="video/mp4">;
              <source src="video/video.ogg" type="video/ogg">;
           </video>
       <div id="video_controls_bar">
         <button id="playpausebtn">Pause</button>
         <input id="seekslider" type="range" min="0" max="100" value="0" step="1">
+        <span id="curtimetext"></span> / <span id="durtimetext"></span>
       </div>
     </div>
      
