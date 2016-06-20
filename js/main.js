@@ -1,19 +1,26 @@
 //Make the play/pause button work in the video
 //Create the seeksleder which shows runing time of video
 
-var vid, playbtn, seekslider, curtimetext, durtimetext;
+var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
 
 function initializePlayer () {
 	//Set object references
 	vid = document.getElementById("my_video");
 	playbtn = document.getElementById("playpausebtn");
 	seekslider = document.getElementById("seekslider");
-	curtimetext = document.getElementById("curtimetext")
-	durtimetext  = document.getElementById("durtimetext")
+	curtimetext = document.getElementById("curtimetext");
+	durtimetext  = document.getElementById("durtimetext");
+	mutebtn  = document.getElementById("mutebtn");
+	volumeslider  = document.getElementById("volumeslider");
+    fullscreenbtn  = document.getElementById("fullscreenbtn");
+
 	//add event listemners
-	playbtn.addEventListener("click", playPause, false);
-	seekslider.addEventListener("change", vidSeek, false);
-	vid.addEventListener("timeupdate", seektimeupdate, false);
+	playbtn.addEventListener("click",playPause, false);
+	seekslider.addEventListener("change",vidSeek, false);
+	vid.addEventListener("timeupdate",seektimeupdate, false);
+	mutebtn.addEventListener("click",vidmute, false);
+	volumeslider.addEventListener("change",setvolume, false);
+	fullscreenbtn.addEventListener("click",toggleFullScreen,false);
 }
 
 window.onload = initializePlayer;
@@ -22,10 +29,10 @@ window.onload = initializePlayer;
 function playPause(){
 	if(vid.paused){
 		vid.play();
-		playbtn.innerHTML = "Pause";
+		playbtn.style.background = "url(icons/pause-icon.png)";
 	} else {
 		vid.pause();
-		playbtn.innerHTML = "Play";
+		playbtn.style.background = "url(icons/play-icon.png)";
 	}
 }
 
@@ -51,12 +58,32 @@ function seektimeupdate() {
 		if(durmins < 10){ durmins = "0"+durmins; }
 		curtimetext.innerHTML = curmins+":"+cursecs;
 		durtimetext.innerHTML = durmins+":"+dursecs;
+}
 
+function vidmute() {
+  if(vid.muted){
+		vid.muted = false;
+		mutebtn.innerHTML = "Mute";
+	} else {
+		vid.muted = true;
+		mutebtn.innerHTML = "Unmute";
+	}
 
 }
 
+function setvolume() {
+	vid.volume = volumeslider.value / 100;
+}
 
-
+function toggleFullScreen(){
+	if(vid.requestFullScreen){
+		vid.requestFullScreen();
+	} else if(vid.webkitRequestFullScreen){
+		vid.webkitRequestFullScreen();
+	} else if(vid.mozRequestFullScreen){
+		vid.mozRequestFullScreen();
+	}
+}
 
 
 

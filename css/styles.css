@@ -27,10 +27,41 @@ Video Controls
   color: black;
 }
 
+button#playpausebtn {
+  background:url(../icons/pause-icon.png);
+  border:none;
+  width:21.5px;
+  height:26px;
+  cursor:pointer;
+  opacity:0.5;
+}
 
+button#playpausebtn:hover{
+  opacity: 1
+};
 
+input#seekslider {
+  width: 180px;
+}
 
+input#volumeslider {
+  width: 80px;
+}
 
+input[type='range'] {
+    -webkit-appearance: none !important;
+    background: #000;
+    border:#666 1px solid;
+    height:4px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: #FFF;
+    height:15px;
+    width:15px;
+    border-radius:100%;
+    cursor:pointer;
+}
 
 
 
