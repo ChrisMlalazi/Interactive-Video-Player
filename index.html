@@ -11,23 +11,35 @@
   <body>
     
     <div id="video_player_box">
-          <video id="my_video" width="550" height="300">
+
+          <video id="my_video" autoplay="autoplay">
              <source src="video/video.mp4" type="video/mp4">;
              <source src="video/video.ogg" type="video/ogg">;
           </video>
 
-      <div id="video_controls_bar">
+     <div id="video_controls_bar">
+       
 
-        <button id="playpausebtn"></button>
+       <input class="slider" id="seekslider" type="range" min="0" max="100" value="0" step="1">
+       <div id="controls_wrap">
+       <div class="controls1">
+             <ul class="controls">
+                 <li class="align"><button id="playpausebtn"></button></li>
+                 <li class="align"><span id="curtimetext"></span> / <span id="durtimetext"></span></li>
+            </ul>
+         </div> <!-- controls 1 -->
+  
+         <div class="controls2">
+             <ul>
+              <li class="align"><button id="fullscreenbtn">[]</button></li>
+              <li class="align"><input id="volumeslider" type="range" min="0" max="100" value="100" step="1"></li>
+              <li class="align"><button id="mutebtn">Mute</button></li>    
+              </ul>
+              </div>  <!-- controls2 -->
+          </div> <!-- controls_wrap -->
 
-        <input id="seekslider" type="range" min="0" max="100" value="0" step="1">
-        <span id="curtimetext"></span> / <span id="durtimetext"></span>
-         <button id="mutebtn">Mute</button>
-
-          <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
-          <button id="fullscreenbtn">[ &nbsp]</button>
-      </div>
-    </div>
+    </div> <!-- video_controls_bar -->
+    </div>  <!-- video_player_box -->
      	
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="js/main.js"></script>

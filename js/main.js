@@ -29,12 +29,14 @@ window.onload = initializePlayer;
 function playPause(){
 	if(vid.paused){
 		vid.play();
-		playbtn.style.background = "url(icons/pause-icon.png)";
+		playbtn.style.background = "url(icons/play-icon.png)";
 	} else {
 		vid.pause();
-		playbtn.style.background = "url(icons/play-icon.png)";
+		playbtn.style.background = "url(icons/pause-icon.png)";
 	}
 }
+ 
+
 
 //Video suration on seekslider
 function vidSeek() {

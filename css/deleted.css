@@ -1,71 +1,42 @@
- 
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Nunito', sans-serif;
-  max-width: 960px;
-  margin: 0 auto;
-  background-color: green;
-}
-
 /*************
 Video Controls
 **************/
 
 #video_player_box{
- width: 100; 
- background: yellow; 
+ width:60%; 
+ background-color: yellow; 
  margin:0px auto;
-}
-
-#my_video {
-  width: 100%;
-  margin-bottom: 0;
-   
+ 
 }
 
 #video_controls_bar{ 
-  background: red; 
-  padding-bottom: 40px;
-  margin-top: -10px;
+  background: green; 
+  padding-bottom: 35px;
+  width: 100%;
+  margin-top; 0;
 
 }
 
-/*.controls li {
-list-style: none;
-display: inline-block;
-}*/
 
-#controls_wrap {
-  background: black;
-  margin-top: -5px;
-}
-
-.controls1 li{
+.controls1 ul li{
   display: block;
-  float: left;
-  padding-left: 10px; 
+  float:left;
 }
 
-.controls2 li{
-  float: right;
+.controls2  ul li{
   display: inline-block;
-  padding-right: 10px;
+  float:right;
 }
+
 
 button#playpausebtn {
   background:url(../icons/pause-icon.png);
   border:none;
-  width:22.4px;
+  width:21.5px;
   height:26px;
   cursor:pointer;
   opacity:0.9;
   margin-left: -40px;
-  outline: none;
 }
 
 button#playpausebtn:hover{
@@ -73,7 +44,7 @@ button#playpausebtn:hover{
 };
 
 input#seekslider {
-  width: 180px;
+  width: 100%;
 }
 
 input#volumeslider {
@@ -97,7 +68,18 @@ input[type='range']::-webkit-slider-thumb {
     cursor:pointer;
 }
 
+/*#mutebtn,
+#volumeslider,
+#fullscreenbtn {
+  background-color: green;
+}
+*/
 
+
+
+.my_video {
+  width: 500px;
+}
 
 
 
