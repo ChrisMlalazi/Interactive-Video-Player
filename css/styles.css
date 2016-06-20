@@ -18,13 +18,16 @@ Video Controls
 
 #video_player_box{
  width:550px; 
- background:#000; 
+ background: red; 
  margin:0px auto;
 }
+
 #video_controls_bar{ 
-  background: #333; 
-  padding:10px;
-  color: black;
+  background: transparent; 
+  padding:5px;
+  /*position: relative;
+  bottom: 50px;
+  color: white;*/
 }
 
 button#playpausebtn {
