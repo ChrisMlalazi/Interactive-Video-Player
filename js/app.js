@@ -1,17 +1,15 @@
-$('.controls_wrap').on('mouseover', function (e) {
+
+$('#video_controls_bar').on('mouseleave', function (e) {
   e.preventDefault();
-  $(this).toggleClass('navicon--active');
-  $('.toggle').toggleClass('toggle--active');
+  
+  $('#controls_wrap').hide(); 
+
 });
 
-
-// $('.navicon').on('click', function (e) {
-//   e.preventDefault();
+$('#video_controls_bar').on('mouseenter', function (e) {
+  e.preventDefault();
   
-//   $('.sentence').toggle();  
-//   $('.white').toggle();
-//   $('.picture').toggle(); 
-//   $('.motto1').toggle();
-  
+  $('#controls_wrap').show(); 
 
-// });
+});
+
