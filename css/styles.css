@@ -68,13 +68,22 @@ display: inline-block;
   display: inline-block
 }
 
-
+/*
 button#mutebtn {
    width: 22px;
    height: 22px;
    outline: none;
    border:none;
 }
+*/
+button#mutebtn {
+  background:url(../icons/volume-on-icon.png); 
+  width: 22px;
+  height: 22px;
+  outline: none;
+  border:none;
+}
+
 
 #mutebtn img{
   width: 25px;
