@@ -32,7 +32,7 @@ Video Controls
 
 #video_controls_bar{ 
   padding-bottom: 30px;
-  background-color: rgba(0,0,0,0.3); 
+  background-color: transparent; 
   position: relative;
   bottom: 70px;
 
@@ -107,6 +107,7 @@ button#playpausebtn:hover{
 
 input#seekslider {
   width: 100%;
+
 }
 
 input#volumeslider {
