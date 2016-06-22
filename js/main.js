@@ -75,6 +75,7 @@ function vidmute() {
 }
 
 
+
 function setvolume() {
 	vid.volume = volumeslider.value / 100;
 }
@@ -88,7 +89,6 @@ function toggleFullScreen(){
 		vid.mozRequestFullScreen();
 	}
 }
-
 
 
 

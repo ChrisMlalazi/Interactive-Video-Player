@@ -9,6 +9,8 @@ body {
   font-family: 'Nunito', sans-serif;
   max-width: 960px;
   margin: 0 auto;
+  color: white;
+ 
 }
 
 /*************
@@ -68,27 +70,15 @@ display: inline-block;
   display: inline-block
 }
 
-/*
-button#mutebtn {
-   width: 22px;
-   height: 22px;
-   outline: none;
-   border:none;
-}
-*/
 button#mutebtn {
   background:url(../icons/volume-on-icon.png); 
   width: 22px;
-  height: 22px;
+  height: 20px;
   outline: none;
   border:none;
 }
 
 
-#mutebtn img{
-  width: 25px;
-  margin-right: 40px;
-}
 
 
 button {
@@ -96,23 +86,26 @@ button {
  background-color: rgba(0,0,0,0); 
 }
 
+
 button#playpausebtn {
   background:url(../icons/pause-icon.png);
   border:none;
-  width:22.4px;
-  height:26px;
+  width: 22px;
+  height: 26px;
   cursor:pointer;
   opacity:0.9;
-  margin-left: -40px;
+  margin-left: -30px;
   outline: none;
  }
 
+
+
 button#playpausebtn:hover{
-  opacity: 1
-};
+  opacity: 1;
+}
 
 input#seekslider {
-  width: 180px;
+  width: 100%;
 }
 
 input#volumeslider {
@@ -122,17 +115,17 @@ input#volumeslider {
 input[type='range'] {
     -webkit-appearance: none !important;
     background: #000;
-    border:#666 1px solid;
+    border:grey 1px solid;
     height:4px;
     width: 100%;
 }
 
 input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none !important;
-    background: #FFF;
-    height:15px;
+    background: orange;
+    height:5px;
     width:15px;
-    border-radius:100%;
+    /*border-radius:100%;*/
     cursor:pointer;
 }
 
