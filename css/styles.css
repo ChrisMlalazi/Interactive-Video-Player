@@ -9,17 +9,17 @@ body {
   font-family: 'Nunito', sans-serif;
   max-width: 960px;
   margin: 0 auto;
-  background-color: green;
 }
 
 /*************
 Video Controls
 **************/
 
+
 #video_player_box{
  width: 100; 
- background: yellow; 
  margin:0px auto;
+ 
 }
 
 #my_video {
@@ -29,9 +29,9 @@ Video Controls
 }
 
 #video_controls_bar{ 
-  background: red; 
   padding-bottom: 40px;
   margin-top: -10px;
+  background-color: rgba(0,0,0,0.6); 
 
 }
 
@@ -41,8 +41,8 @@ display: inline-block;
 }*/
 
 #controls_wrap {
-  background: black;
   margin-top: -5px;
+
 }
 
 .controls1 li{
@@ -55,6 +55,36 @@ display: inline-block;
   float: right;
   display: inline-block;
   padding-right: 10px;
+
+}
+
+
+  #fullscreenbtn {
+  border:none;
+  cursor:pointer;
+  outline: none;
+  width: 30px;
+  margin-right: 0;
+  display: inline-block
+}
+
+
+button#mutebtn {
+   width: 22px;
+   height: 22px;
+   outline: none;
+   border:none;
+}
+
+#mutebtn img{
+  width: 25px;
+  margin-right: 40px;
+}
+
+
+button {
+ outline-style: none;
+ background-color: rgba(0,0,0,0); 
 }
 
 button#playpausebtn {
@@ -66,7 +96,7 @@ button#playpausebtn {
   opacity:0.9;
   margin-left: -40px;
   outline: none;
-}
+ }
 
 button#playpausebtn:hover{
   opacity: 1

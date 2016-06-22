@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project_7|Techdegree</title>   
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/432c962db4.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
@@ -12,7 +13,7 @@
     
     <div id="video_player_box">
 
-          <video id="my_video" autoplay="autoplay">
+          <video id="my_video">
              <source src="video/video.mp4" type="video/mp4">;
              <source src="video/video.ogg" type="video/ogg">;
           </video>
@@ -21,19 +22,22 @@
        
 
        <input class="slider" id="seekslider" type="range" min="0" max="100" value="0" step="1">
+       
        <div id="controls_wrap">
        <div class="controls1">
              <ul class="controls">
                  <li class="align"><button id="playpausebtn"></button></li>
-                 <li class="align"><span id="curtimetext"></span> / <span id="durtimetext"></span></li>
+                 <li class="align"><span id="curtimetext">00:00</span> / <span id="durtimetext">00:00</span></li>
             </ul>
          </div> <!-- controls 1 -->
   
          <div class="controls2">
              <ul>
-              <li class="align"><button id="fullscreenbtn">[]</button></li>
+              <li class="align"><button id="fullscreenbtn"><img src="icons/fullscreen-icon.png"></button></li>
+
               <li class="align"><input id="volumeslider" type="range" min="0" max="100" value="100" step="1"></li>
-              <li class="align"><button id="mutebtn">Mute</button></li>    
+
+              <li><button id="mutebtn"></button></li>    
               </ul>
               </div>  <!-- controls2 -->
           </div> <!-- controls_wrap -->

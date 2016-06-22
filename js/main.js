@@ -25,18 +25,6 @@ function initializePlayer () {
 
 window.onload = initializePlayer;
 
-//Activate play/pause button
-function playPause(){
-	if(vid.paused){
-		vid.play();
-		playbtn.style.background = "url(icons/play-icon.png)";
-	} else {
-		vid.pause();
-		playbtn.style.background = "url(icons/pause-icon.png)";
-	}
-}
- 
-
 
 //Video suration on seekslider
 function vidSeek() {
@@ -62,16 +50,30 @@ function seektimeupdate() {
 		durtimetext.innerHTML = durmins+":"+dursecs;
 }
 
+
+
+//Activate play/pause button
+function playPause(){
+	if(vid.paused){
+		vid.play();
+		playbtn.style.background = "url(icons/play-icon.png)";
+	} else {
+		vid.pause();
+		playbtn.style.background = "url(icons/pause-icon.png)";
+	}
+}
+
 function vidmute() {
   if(vid.muted){
 		vid.muted = false;
-		mutebtn.innerHTML = "Mute";
+		mutebtn.style.background = "url(icons/volume-on-icon.png)";
 	} else {
 		vid.muted = true;
-		mutebtn.innerHTML = "Unmute";
+		mutebtn.style.background = "url(icons/volume-off-icon.png)";
 	}
 
 }
+
 
 function setvolume() {
 	vid.volume = volumeslider.value / 100;
