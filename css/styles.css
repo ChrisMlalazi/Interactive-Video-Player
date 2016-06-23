@@ -38,6 +38,8 @@ Video Controls
 
 }
 
+
+
 /*.controls li {
 list-style: none;
 display: inline-block;
@@ -110,6 +112,13 @@ input#seekslider {
 
 }
 
+input#seekslider_2 {
+  width: 100%;
+  margin-top: 58px;
+  display: none; /*make seekslider2 not appear when loading */
+
+}
+
 input#volumeslider {
   width: 80px;
 }
@@ -127,7 +136,7 @@ input[type='range']::-webkit-slider-thumb {
     background: orange;
     height:5px;
     width:15px;
-    /*border-radius:100%;*/
+    
     cursor:pointer;
 }
 

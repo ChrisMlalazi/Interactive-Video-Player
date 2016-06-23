@@ -1,13 +1,15 @@
 //Make the play/pause button work in the video
 //Create the seeksleder which shows runing time of video
 
-var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
+var vid, playbtn, seekslider, seekslider_2, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
 
 function initializePlayer () {
 	//Set object references
 	vid = document.getElementById("my_video");
 	playbtn = document.getElementById("playpausebtn");
 	seekslider = document.getElementById("seekslider");
+	seekslider_2 = document.getElementById("seekslider_2");
+
 	curtimetext = document.getElementById("curtimetext");
 	durtimetext  = document.getElementById("durtimetext");
 	mutebtn  = document.getElementById("mutebtn");
@@ -17,7 +19,9 @@ function initializePlayer () {
 	//add event listemners
 	playbtn.addEventListener("click",playPause, false);
 	seekslider.addEventListener("change",vidSeek, false);
+	seekslider_2.addEventListener("change",vidSeek, false);
 	vid.addEventListener("timeupdate",seektimeupdate, false);
+	vid.addEventListener("timeupdate",seektimeupdate2, false);
 	mutebtn.addEventListener("click",vidmute, false);
 	volumeslider.addEventListener("change",setvolume, false);
 	fullscreenbtn.addEventListener("click",toggleFullScreen,false);
@@ -29,6 +33,12 @@ window.onload = initializePlayer;
 //Video suration on seekslider
 function vidSeek() {
    var seekto = vid.duration * (seekslider.value / 100);
+   vid.currentTime = seekto;
+
+}
+
+function vidSeek() {
+   var seekto = vid.duration * (seekslider_2.value / 100);
    vid.currentTime = seekto;
 
 }
@@ -50,6 +60,22 @@ function seektimeupdate() {
 		durtimetext.innerHTML = durmins+":"+dursecs;
 }
 
+function seektimeupdate2() {
+ 		var me = vid.currentTime * (100 / vid.duration);
+ 		seekslider_2.value = me;
+
+ 		//Time indicator on seekslider
+ 		var curmins = Math.floor(vid.currentTime / 60);
+		var cursecs = Math.floor(vid.currentTime - curmins * 60);
+		var durmins = Math.floor(vid.duration / 60);
+		var dursecs = Math.floor(vid.duration - durmins * 60);
+		if(cursecs < 10){ cursecs = "0"+cursecs; }
+		if(dursecs < 10){ dursecs = "0"+dursecs; }
+		if(curmins < 10){ curmins = "0"+curmins; }
+		if(durmins < 10){ durmins = "0"+durmins; }
+		curtimetext.innerHTML = curmins+":"+cursecs;
+		durtimetext.innerHTML = durmins+":"+dursecs;
+}
 
 
 //Activate play/pause button
