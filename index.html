@@ -10,19 +10,17 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+    <div class="wrapper">
     
     <div id="video_player_box">
 
-          <video id="my_video">
+          <video id="my_video" preload="metadata">
              <source src="video/video.mp4" type="video/mp4">;
              <source src="video/video.ogg" type="video/ogg">;
+             <track label="English" kind="subtitles" srclang="en" src="video/captions.vtt">
           </video>
 
      <div id="video_controls_bar">
-       
-
-      
-       
        <div id="controls_wrap">
         <input class="slider" id="seekslider" type="range" min="0" max="100" value="0" step="1">
        <div class="controls1">
@@ -47,13 +45,18 @@
           </div> <!-- controls_wrap -->
 
             <input class="slider" id="seekslider_2" type="range" min="0" max="100" value="0" step="1">
-       <div class="controls1">
-         
-          
-        
-    </div> <!-- video_controls_bar -->
+           
+       </div> <!-- video_controls_bar -->
     </div>  <!-- video_player_box -->
-     	
+   
+  
+  <div id="text">
+      <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        
+      </p>
+     </div>
+     	 </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
      <script src="js/app.js"></script>
     <script src="js/main.js"></script>

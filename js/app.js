@@ -8,7 +8,7 @@ $('#video_player_box').on('mouseenter', function (e) {
 
 });
 
-//hide controls
+// hide controls
 $('#video_player_box').on('mouseleave', function (e) {
   e.preventDefault();
   
@@ -37,28 +37,4 @@ $('#video_player_box').on('mouseleave', function (e) {
   $("#seekslider_2").show();
 
 });
-
-
-
-
-
-// $('#video_player_box').on('mouseenter', function (e) {
-//   e.preventDefault();
-
-//   $("#seekslider_2").hide();
-
-// });
-
-
-
-
-
-
-   // var el = document.getElementByClassName("controls1");                                                                                                                                                                                                             if ( el === true) {
-   //  e.preventDefault();
-    // if ("#seekslider:visible") {
-    // $(".seekslider2").hide();
-// } else {
-//     $(".controls2").show();
-// }
 

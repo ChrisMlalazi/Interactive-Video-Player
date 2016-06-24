@@ -9,33 +9,54 @@ body {
   font-family: 'Nunito', sans-serif;
   max-width: 960px;
   margin: 0 auto;
-  color: white;
+  color: grey;
  
 }
 
 /*************
 Video Controls
 **************/
+#text   {
+  color: orange;
+  padding: 10px;
+}
 
+.transcript {
+  background-color: yellow;
+  
+}
 
-#video_player_box{
- width: 100; 
- margin:0px auto;
- 
+div#video_player_box{
+ width: 100%; 
+ position: relative;
+}
+
+.red {
+  height: 100px;
+  background-color: red;
 }
 
 #my_video {
   width: 100%;
-  margin-bottom: 0;
+  margin-bottom: 0; 
    
+     
 }
 
 #video_controls_bar{ 
-  padding-bottom: 30px;
-  background-color: transparent; 
-  position: relative;
-  bottom: 70px;
+max-width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
 
+}
+
+#curtimetext,
+#durtimetext {
+  color: white;
 }
 
 
@@ -54,6 +75,7 @@ display: inline-block;
   display: block;
   float: left;
   padding-left: 10px; 
+  margin-bottom: 10px; 
 }
 
 .controls2 li{
@@ -109,12 +131,13 @@ button#playpausebtn:hover{
 
 input#seekslider {
   width: 100%;
+  margin-bottom: -20px;
 
 }
 
 input#seekslider_2 {
   width: 100%;
-  margin-top: 58px;
+  margin-top: 50px;
   display: none; /*make seekslider2 not appear when loading */
 
 }
@@ -125,7 +148,7 @@ input#volumeslider {
 
 input[type='range'] {
     -webkit-appearance: none !important;
-    background: #000;
+    background-color: #000;
     border:grey 1px solid;
     height:4px;
     width: 100%;
@@ -133,10 +156,9 @@ input[type='range'] {
 
 input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none !important;
-    background: orange;
+    background-color: orange;
     height:5px;
     width:15px;
-    
     cursor:pointer;
 }
 
