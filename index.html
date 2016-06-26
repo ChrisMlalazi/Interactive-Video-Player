@@ -14,16 +14,17 @@
     
     <div id="video_player_box">
 
-          <video id="my_video" preload="metadata">
+          <video id="my_video" >
              <source src="video/video.mp4" type="video/mp4">;
              <source src="video/video.ogg" type="video/ogg">;
-             <track label="English" kind="subtitles" srclang="en" src="video/captions.vtt">
+             <track label="English" kind="subtitles" srclang="en" src="icons/captions.vtt" class="#chris" default>
           </video>
 
      <div id="video_controls_bar">
        <div id="controls_wrap">
         <input class="slider" id="seekslider" type="range" min="0" max="100" value="0" step="1">
        <div class="controls1">
+       <span id="progress" style="width: 23.191%;"></span>
 
              <ul class="controls">
                  <li class="align1"><button id="playpausebtn"></button></li>
@@ -44,18 +45,39 @@
 
           </div> <!-- controls_wrap -->
 
-            <input class="slider" id="seekslider_2" type="range" min="0" max="100" value="0" step="1">
-           
+            <!-- <input class="slider" id="seekslider_2" type="range" min="0" max="100" value="0" step="1" -->
+            
        </div> <!-- video_controls_bar -->
     </div>  <!-- video_player_box -->
-   
-  
-  <div id="text">
-      <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-        
-      </p>
-     </div>
+
+ <div id="text">
+        <p>
+        <span data-start="0" class>Now that we've looked at the architecture of the internet, let's see how you might</span>
+        <span data-start="4.13" class>connect your personal devices to the internet inside your house.</span>
+        <span data-start="7.535" class>Well there are many ways to connect to the internet, and</span>
+        <span data-start="11.27" class>most often people connect wirelessly.</span>
+        <span data-start="13.96" class>Let's look at an example of how you can connect to the internet.</span>
+        </p>
+        <p>  
+        <span data-start="17.94" class>If you live in a city or a town, you probably have a coaxial cable for</span>
+        <span data-start="22.37" class>cable Internet, or a phone line if you have DSL, running to the outside of</span>
+        <span data-start="26.88" class>your house, that connects you to the Internet Service Provider, or ISP.</span>
+        </p>
+        <p>
+        <span data-start="32.1" class>If you live far out in the country, you'll more likely have</span>
+        <span data-start="34.73" class>a dish outside your house, connecting you wirelessly to your closest ISP, or</span>
+        <span data-start="39.43" class>you might also use the telephone system.</span>
+        </p>
+        <p>
+        <span data-start="42.35" class>Whether a wire comes straight from the ISP hookup outside your house, or</span>
+        <span data-start="46.3" class>it travels over radio waves from your roof,</span>
+        <span data-start="49.27" class>the first stop a wire will make once inside your house, is at your modem.</span>
+        </p>
+        <p>    
+        <span data-start="53.76" class>A modem is what connects the internet to your network at home.</span>
+        <span data-start="57.78" class>A few common residential modems are DSL or</span>
+        </p>
+    </div>
      	 </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
      <script src="js/app.js"></script>

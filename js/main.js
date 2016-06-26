@@ -7,8 +7,8 @@ function initializePlayer () {
 	//Set object references
 	vid = document.getElementById("my_video");
 	playbtn = document.getElementById("playpausebtn");
-	seekslider = document.getElementById("seekslider");
-	seekslider_2 = document.getElementById("seekslider_2");
+	// seekslider = document.getElementById("seekslider");
+	// seekslider_2 = document.getElementById("seekslider_2");
 
 	curtimetext = document.getElementById("curtimetext");
 	durtimetext  = document.getElementById("durtimetext");
@@ -19,7 +19,7 @@ function initializePlayer () {
 	//add event listemners
 	playbtn.addEventListener("click",playPause, false);
 	seekslider.addEventListener("change",vidSeek, false);
-	seekslider_2.addEventListener("change",vidSeek, false);
+	// seekslider_2.addEventListener("change",vidSeek, false);
 	vid.addEventListener("timeupdate",seektimeupdate, false);
 	vid.addEventListener("timeupdate",seektimeupdate2, false);
 	mutebtn.addEventListener("click",vidmute, false);
@@ -31,17 +31,17 @@ window.onload = initializePlayer;
 
 
 //Video suration on seekslider
-function vidSeek() {
-   var seekto = vid.duration * (seekslider.value / 100);
-   vid.currentTime = seekto;
+// function vidSeek() {
+//    var seekto = vid.duration * (seekslider.value / 100);
+//    vid.currentTime = seekto;
 
-}
+// }
 
-function vidSeek() {
-   var seekto = vid.duration * (seekslider_2.value / 100);
-   vid.currentTime = seekto;
+// function vidSeek() {
+//    var seekto = vid.duration * (seekslider_2.value / 100);
+//    vid.currentTime = seekto;
 
-}
+// }
 
 function seektimeupdate() {
  		var nt = vid.currentTime * (100 / vid.duration);
@@ -116,6 +116,26 @@ function toggleFullScreen(){
 	}
 }
 
+
+ $(function() {
+    var transcriptElements = $("span");
+    var i = 0;
+    var time = 18;
+        $.each(transcriptElements, function(){
+               var start = $(transcriptElements[i]).attr("data-start");
+               var end = new Number($(transcriptElements[i]).attr("data-start"));
+               var startNum = parseFloat(start);
+               var endNum = parseFloat(end);
+               if (time >= startNum && time <= endNum){
+                    $(transcriptElements[i]).addClass("hilite");
+               } else {
+                    $(transcriptElements[i]).removeClass("hilite");
+               } 
+               i++;
+            });
+
+
+            });
 
 
 
