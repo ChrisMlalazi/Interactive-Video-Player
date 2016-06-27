@@ -28,9 +28,6 @@ function initializePlayer () {
 
 window.onload = initializePlayer;
 
-
-// vid.addEventListener('timeupdate', progressPopulate);
-
 // Video suration on seekslider
 function vidSeek() {
    var seekto = vid.duration * (seekslider.value / 100);
