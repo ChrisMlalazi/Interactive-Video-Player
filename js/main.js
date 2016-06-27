@@ -1,13 +1,14 @@
 //Make the play/pause button work in the video
 //Create the seeksleder which shows runing time of video
 
-var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
+var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn, progress;
 
 function initializePlayer () {
 	//Set object references
 	vid = document.getElementById("my_video");
 	playbtn = document.getElementById("playpausebtn");
 	seekslider = document.getElementById("seekslider");
+	progress = document.getElementById("progress");
 
 	curtimetext = document.getElementById("curtimetext");
 	durtimetext  = document.getElementById("durtimetext");
@@ -27,6 +28,8 @@ function initializePlayer () {
 
 window.onload = initializePlayer;
 
+
+video.addEventListener('timeupdate', progressPopulate);
 
 // Video suration on seekslider
 function vidSeek() {
@@ -91,9 +94,11 @@ function vidmute() {
   if(vid.muted){
 		vid.muted = false;
 		mutebtn.style.background = "url(icons/volume-on-icon.png)";
+		   volumeslider.value = 100;  //turn on volume
 	} else {
 		vid.muted = true;
 		mutebtn.style.background = "url(icons/volume-off-icon.png)";
+		 volumeslider.value = 0;   //turn off volume
 	}
 
 }

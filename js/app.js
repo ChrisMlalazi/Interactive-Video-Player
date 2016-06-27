@@ -12,10 +12,9 @@ var $buttonControls = $("#controls_wrap");
 
 // Hide button controls when video is playing 
 $videoContainer.on("mouseleave", function() {
-	if($video[0].paused === false) {
+	
 		$buttonControls.hide();
 		$videoControls.css("margin-top", "5%");	  
-	}
 });
 
 // Show button controls on hover
@@ -24,11 +23,37 @@ $videoContainer.on("mouseover", function() {
 		$videoControls.css("margin-top", "0");	  
 });
 
-// Update progress bar as video plays
-$video[0].addEventListener("timeupdate", function() { 
-	var value = (100 / $video[0].duration) * $video[0].currentTime;
-	$progress.css("width", value+"%");	
-}); 
+
+//Progress Bar playback
+
+$video.bind("timeupdate", videoTimeUpdateHandler);
+$progressBar.mousedown(progressMouseDown);
+$progress.mousedown(progressMouseDown);
+        
+        function videoTimeUpdateHandler(e) {
+            var video = $video.get(0);
+            var percent = video.currentTime / video.duration;
+            updateProgressWidth(percent);
+        }
+        
+        function progressMouseDown(e) {
+            var $this = $(this);
+            var x = e.pageX - $this.offset().left;
+            var percent = x / $this.width();
+            updateProgressWidth(percent);
+            updateVideoTime(percent);
+        }
+        
+        function updateProgressWidth(percent) {
+            $progress.width((percent * 100) + '%');
+            $progress.width((percent * 100) - '%');
+        }
+        
+        function updateVideoTime(percent) {
+            var video = $video.get(0);
+            video.currentTime = percent * video.duration;
+        }
+
 
 // Highlight current span when video plays 
 	$video.on("timeupdate", function() {
