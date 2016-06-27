@@ -27,7 +27,7 @@ $videoContainer.on("mouseover", function() {
 //Progress Bar playback
 
 $video.bind("timeupdate", videoTimeUpdateHandler);
-$progress.mousedown(progressMouseDown);
+$progressBar.mousedown(progressMouseDown);
         
         function videoTimeUpdateHandler(e) {
             var video = $video.get(0);
