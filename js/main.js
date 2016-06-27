@@ -1,14 +1,13 @@
 //Make the play/pause button work in the video
 //Create the seeksleder which shows runing time of video
 
-var vid, playbtn, seekslider, seekslider_2, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
+var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn;
 
 function initializePlayer () {
 	//Set object references
 	vid = document.getElementById("my_video");
 	playbtn = document.getElementById("playpausebtn");
-	// seekslider = document.getElementById("seekslider");
-	// seekslider_2 = document.getElementById("seekslider_2");
+	seekslider = document.getElementById("seekslider");
 
 	curtimetext = document.getElementById("curtimetext");
 	durtimetext  = document.getElementById("durtimetext");
@@ -19,7 +18,6 @@ function initializePlayer () {
 	//add event listemners
 	playbtn.addEventListener("click",playPause, false);
 	seekslider.addEventListener("change",vidSeek, false);
-	// seekslider_2.addEventListener("change",vidSeek, false);
 	vid.addEventListener("timeupdate",seektimeupdate, false);
 	vid.addEventListener("timeupdate",seektimeupdate2, false);
 	mutebtn.addEventListener("click",vidmute, false);
@@ -30,18 +28,18 @@ function initializePlayer () {
 window.onload = initializePlayer;
 
 
-//Video suration on seekslider
-// function vidSeek() {
-//    var seekto = vid.duration * (seekslider.value / 100);
-//    vid.currentTime = seekto;
+// Video suration on seekslider
+function vidSeek() {
+   var seekto = vid.duration * (seekslider.value / 100);
+   vid.currentTime = seekto;
 
-// }
+}
 
-// function vidSeek() {
-//    var seekto = vid.duration * (seekslider_2.value / 100);
-//    vid.currentTime = seekto;
+function vidSeek() {
+   var seekto = vid.duration * (seekslider_2.value / 100);
+   vid.currentTime = seekto;
 
-// }
+}
 
 function seektimeupdate() {
  		var nt = vid.currentTime * (100 / vid.duration);
@@ -80,6 +78,7 @@ function seektimeupdate2() {
 
 //Activate play/pause button
 function playPause(){
+	console.log(5 + 6);
 	if(vid.paused){
 		vid.play();
 		playbtn.style.background = "url(icons/play-icon.png)";
@@ -91,6 +90,7 @@ function playPause(){
 
 function vidmute() {
   if(vid.muted){
+  	console.log(5 + 6);
 		vid.muted = false;
 		mutebtn.style.background = "url(icons/volume-on-icon.png)";
 	} else {
@@ -103,10 +103,12 @@ function vidmute() {
 
 
 function setvolume() {
+	console.log(5 + 6);
 	vid.volume = volumeslider.value / 100;
 }
 
 function toggleFullScreen(){
+	console.log(5 + 6);
 	if(vid.requestFullScreen){
 		vid.requestFullScreen();
 	} else if(vid.webkitRequestFullScreen){
@@ -115,27 +117,6 @@ function toggleFullScreen(){
 		vid.mozRequestFullScreen();
 	}
 }
-
-
- $(function() {
-    var transcriptElements = $("span");
-    var i = 0;
-    var time = 18;
-        $.each(transcriptElements, function(){
-               var start = $(transcriptElements[i]).attr("data-start");
-               var end = new Number($(transcriptElements[i]).attr("data-start"));
-               var startNum = parseFloat(start);
-               var endNum = parseFloat(end);
-               if (time >= startNum && time <= endNum){
-                    $(transcriptElements[i]).addClass("hilite");
-               } else {
-                    $(transcriptElements[i]).removeClass("hilite");
-               } 
-               i++;
-            });
-
-
-            });
 
 
 

@@ -1,48 +1,34 @@
- 
-//Show controls
-$('#video_player_box').on('mouseenter', function (e) {
-  e.preventDefault();
-  
-  $('#controls_wrap').show(); 
 
-
-});
-
-// hide controls
-$('#video_player_box').on('mouseleave', function (e) {
-  e.preventDefault();
-  
-  $('#controls_wrap').hide(); 
-
-
-});
-
-
-
-//hide seekslider_2 on mouseenter
-$('#video_player_box').on('mouseenter', function (e) {
-  e.preventDefault();
-  
-  $('#seekslider_2').hide(); 
-
-});
-
-//show seekslider_2 on mouseenter
-
-
-$('#video_player_box').on('mouseleave', function (e) {
-  e.preventDefault();
-
-  $("#seekslider_2").show();
-
-});
 
 
 var $video = $("#my_video");
 var $progress = $("#progress");
 var $progressBar = $(".slider");
+var $videoContainer = $("#video_player_box");
+
+var $videoControls = $("#video_controls_bar");
+var $buttonControls = $("#controls_wrap");
 
 
+// Hide button controls when video is playing 
+$videoContainer.on("mouseleave", function() {
+	if($video[0].paused === false) {
+		$buttonControls.hide();
+		$videoControls.css("margin-top", "5%");	  
+	}
+});
+
+// Show button controls on hover
+$videoContainer.on("mouseover", function() {
+		$buttonControls.show();
+		$videoControls.css("margin-top", "0");	  
+});
+
+// Update progress bar as video plays
+$video[0].addEventListener("timeupdate", function() { 
+	var value = (100 / $video[0].duration) * $video[0].currentTime;
+	$progress.css("width", value+"%");	
+}); 
 
 // Highlight current span when video plays 
 	$video.on("timeupdate", function() {
@@ -94,13 +80,4 @@ $("span").click(function() {
 	$video[0].currentTime = transcriptTime;
 });
 
-$progressBar[0].addEventListener("change", function() {
-	var time = $video[0].duration * ($progressBar[0].value / 100);
-	$video[0].currentTime = time;
-});
 
-// Update progress bar as video plays
-$video[0].addEventListener("timeupdate", function() { 
-	var value = (100 / $video[0].duration) * $video[0].currentTime;
-	$progress.css("width", value+"%");	
-}); 
