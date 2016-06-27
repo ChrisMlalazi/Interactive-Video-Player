@@ -20,7 +20,7 @@ function initializePlayer () {
 	playbtn.addEventListener("click",playPause, false);
 	seekslider.addEventListener("change",vidSeek, false);
 	vid.addEventListener("timeupdate",seektimeupdate, false);
-	vid.addEventListener("timeupdate",seektimeupdate2, false);
+	
 	mutebtn.addEventListener("click",vidmute, false);
 	volumeslider.addEventListener("change",setvolume, false);
 	fullscreenbtn.addEventListener("click",toggleFullScreen,false);
@@ -29,7 +29,7 @@ function initializePlayer () {
 window.onload = initializePlayer;
 
 
-video.addEventListener('timeupdate', progressPopulate);
+// vid.addEventListener('timeupdate', progressPopulate);
 
 // Video suration on seekslider
 function vidSeek() {
@@ -38,11 +38,6 @@ function vidSeek() {
 
 }
 
-function vidSeek() {
-   var seekto = vid.duration * (seekslider_2.value / 100);
-   vid.currentTime = seekto;
-
-}
 
 function seektimeupdate() {
  		var nt = vid.currentTime * (100 / vid.duration);
@@ -60,24 +55,6 @@ function seektimeupdate() {
 		curtimetext.innerHTML = curmins+":"+cursecs;
 		durtimetext.innerHTML = durmins+":"+dursecs;
 }
-
-function seektimeupdate2() {
- 		var me = vid.currentTime * (100 / vid.duration);
- 		seekslider_2.value = me;
-
- 		//Time indicator on seekslider
- 		var curmins = Math.floor(vid.currentTime / 60);
-		var cursecs = Math.floor(vid.currentTime - curmins * 60);
-		var durmins = Math.floor(vid.duration / 60);
-		var dursecs = Math.floor(vid.duration - durmins * 60);
-		if(cursecs < 10){ cursecs = "0"+cursecs; }
-		if(dursecs < 10){ dursecs = "0"+dursecs; }
-		if(curmins < 10){ curmins = "0"+curmins; }
-		if(durmins < 10){ durmins = "0"+durmins; }
-		curtimetext.innerHTML = curmins+":"+cursecs;
-		durtimetext.innerHTML = durmins+":"+dursecs;
-}
-
 
 //Activate play/pause button
 function playPause(){
