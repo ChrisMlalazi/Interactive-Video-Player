@@ -27,7 +27,6 @@ $videoContainer.on("mouseover", function() {
 //Progress Bar playback
 
 $video.bind("timeupdate", videoTimeUpdateHandler);
-$progressBar.mousedown(progressMouseDown);
 $progress.mousedown(progressMouseDown);
         
         function videoTimeUpdateHandler(e) {
@@ -46,7 +45,7 @@ $progress.mousedown(progressMouseDown);
         
         function updateProgressWidth(percent) {
             $progress.width((percent * 100) + '%');
-            $progress.width((percent * 100) - '%');
+
         }
         
         function updateVideoTime(percent) {
