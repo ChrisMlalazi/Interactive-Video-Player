@@ -1,8 +1,26 @@
 
+
+
 var $video = $("#my_video");
 var $progress = $("#progress");
 var $progressBar = $(".slider");
+var $videoContainer = $("#video_player_box");
 
+var $videoControls = $("#video_controls_bar");
+var $buttonControls = $("#controls_wrap");
+
+// Hide button controls when video is playing 
+$videoContainer.on("mouseleave", function() {
+		$buttonControls.hide();
+		$videoControls.css("margin-top", "5%");	  	
+});
+
+
+// Show button controls on hover
+$videoContainer.on("mouseover", function() {
+		$buttonControls.show();
+		$videoControls.css("margin-top", "0");	  
+});
 
 
 // Highlight current span when video plays 
