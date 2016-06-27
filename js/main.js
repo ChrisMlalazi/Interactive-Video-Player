@@ -78,7 +78,6 @@ function seektimeupdate2() {
 
 //Activate play/pause button
 function playPause(){
-	console.log(5 + 6);
 	if(vid.paused){
 		vid.play();
 		playbtn.style.background = "url(icons/play-icon.png)";
@@ -90,7 +89,6 @@ function playPause(){
 
 function vidmute() {
   if(vid.muted){
-  	console.log(5 + 6);
 		vid.muted = false;
 		mutebtn.style.background = "url(icons/volume-on-icon.png)";
 	} else {
@@ -101,14 +99,11 @@ function vidmute() {
 }
 
 
-
 function setvolume() {
-	console.log(5 + 6);
 	vid.volume = volumeslider.value / 100;
 }
 
 function toggleFullScreen(){
-	console.log(5 + 6);
 	if(vid.requestFullScreen){
 		vid.requestFullScreen();
 	} else if(vid.webkitRequestFullScreen){
