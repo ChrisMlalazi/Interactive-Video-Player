@@ -123,6 +123,9 @@ button {
 
 button#playpausebtn {
   background:url(../icons/pause-icon.png);
+  background-repeat:  no-repeat;     
+  background-position: center;
+  background-size: cover; 
   border:none;
   width: 22px;
   height: 26px;
